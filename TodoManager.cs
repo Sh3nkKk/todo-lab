@@ -6,6 +6,11 @@ public class TodoManager
 
     public bool AddTask(string text)
     {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
         var item = new TodoItem(text);
         _items.Add(item);
         return true;
